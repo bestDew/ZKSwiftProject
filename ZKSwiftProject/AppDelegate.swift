@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds);
+        defer { // defer block 里的代码会在函数 return 之前执行
+            window?.makeKeyAndVisible()
+        }
+        window?.rootViewController = ZKTabBarController()
+        
         return true
     }
 

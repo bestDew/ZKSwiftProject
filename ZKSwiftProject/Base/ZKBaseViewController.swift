@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ZKBaseViewController.swift
 //  ZKSwiftProject
 //
 //  Created by bestdew on 2018/12/29.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ZKBaseViewController: UIViewController {
 
+    var userInfo: [AnyHashable : Any]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        view.backgroundColor = .white
     }
-
-
 }
-

@@ -1,0 +1,14 @@
+platform :ios, '10.0'
+
+inhibit_all_warnings!
+
+target 'ZKSwiftProject' do
+  
+  use_frameworks!
+ 
+  pod 'Moya'        # 网络请求库
+  pod 'SwiftyJSON'  # JSON 解析库
+  pod 'Kingfisher'  # 网络图片加载库
+  pod 'SnapKit'     # 自动布局库
+
+end
