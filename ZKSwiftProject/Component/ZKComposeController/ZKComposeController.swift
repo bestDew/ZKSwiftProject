@@ -33,7 +33,7 @@ public class ZKComposeController: UIViewController {
     private var pageControl: UIPageControl?
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0.0, y: 0.0, width: 49.0, height: 49.0)
+        button.frame = CGRect(x: 0, y: 0, width: 49, height: 49)
         button.center = CGPoint(x: view.centerX, y: view.height - 24.5 - kBottomMargin)
         button.adjustsImageWhenHighlighted = false
         button.transform = CGAffineTransform.identity
@@ -62,7 +62,8 @@ public class ZKComposeController: UIViewController {
         super.viewDidLoad()
         
         addBlurEffect()
-        addMenuItemButtons()
+        addItemButtons()
+        addOtherViews()
     }
     
     private func addBlurEffect() {
@@ -72,7 +73,7 @@ public class ZKComposeController: UIViewController {
         view.addSubview(visualEffectView)
     }
     
-    private func addMenuItemButtons() {
+    private func addItemButtons() {
         
         let pages = Int(ceilf(Float(items.count) / 6))
         let scrollView = UIScrollView(frame: view.bounds)
@@ -86,24 +87,26 @@ public class ZKComposeController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction(_:)))
         scrollView.addGestureRecognizer(tapGesture)
         
-        view.addSubview(closeButton)
-        
-        let margin = closeButton.y - 300.0
-        let spacing = (scrollView.width - 240.0) / 4
+        let margin = closeButton.y - 300
+        let spacing = (scrollView.width - 240) / 4
         for (index, item) in items.enumerated() {
             let page = Int(index / 6)
-            let x = spacing + CGFloat(index % 3) * (spacing + 80.0)  + CGFloat(page) * scrollView.width
-            let y = CGFloat((index % 6) / 3) * 125.0 + margin
+            let x = spacing + CGFloat(index % 3) * (spacing + 80)  + CGFloat(page) * scrollView.width
+            let y = CGFloat((index % 6) / 3) * 125 + margin
             let button = ZKComposeButton(type: .custom)
-            button.frame = CGRect(x: x, y: y, width: 80.0, height: 105.0)
+            button.frame = CGRect(x: x, y: y, width: 80, height: 105)
             button.tag = 10 + index
             button.isEnabled = item.isEnabled
             button.setTitle(item.title, for: .normal)
             button.setImage(item.image, for: .normal)
             button.titleLabel?.textAlignment = .center
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             button.setTitleColor(UIColor.darkText, for: .normal)
-            button.transform = CGAffineTransform(translationX: 0.0, y: view.height - y)
+            if page > 0 {
+                button.transform = CGAffineTransform.identity
+            } else {
+                button.transform = CGAffineTransform(translationX: 0, y: view.height - y)
+            }
             button.addTarget(self, action: #selector(itemButtonAction(_:)), for: .touchUpInside)
             scrollView.addSubview(button)
             
@@ -114,8 +117,8 @@ public class ZKComposeController: UIViewController {
         
         let w = CGFloat(pages * 15)
         let x = (view.width - w) / 2
-        let y = closeButton.y - 30.0
-        pageControl = UIPageControl(frame: CGRect(x: x, y: y, width: w, height: 20.0))
+        let y = closeButton.y - 30
+        pageControl = UIPageControl(frame: CGRect(x: x, y: y, width: w, height: 20))
         pageControl!.numberOfPages = pages
         pageControl!.hidesForSinglePage = true
         pageControl!.pageIndicatorTintColor = UIColor(hexString: "#C0C0C0")!
@@ -123,12 +126,44 @@ public class ZKComposeController: UIViewController {
         view.addSubview(pageControl!)
     }
     
+    private func addOtherViews() {
+        view.addSubview(closeButton)
+        
+        let dayLabel = UILabel(frame: CGRect(origin: CGPoint(x: 20, y: kTopMargin), size: CGSize.zero))
+        dayLabel.font = UIFont.systemFont(ofSize: 45)
+        dayLabel.textColor = UIColor.darkGray
+        dayLabel.text = String(format: "%02d", Date().day)
+        dayLabel.sizeToFit()
+        view.addSubview(dayLabel)
+        
+        let weekLabel = UILabel(frame: CGRect(origin: CGPoint(x: dayLabel.maxX + 12, y: kTopMargin + 10), size: CGSize.zero))
+        weekLabel.font = UIFont.systemFont(ofSize: 12)
+        weekLabel.textColor = UIColor.gray
+        weekLabel.text = Date().weekdayName
+        weekLabel.sizeToFit()
+        view.addSubview(weekLabel)
+        
+        let yearLabel = UILabel(frame: CGRect(origin: CGPoint(x: weekLabel.x, y: weekLabel.maxY + 5), size: CGSize.zero))
+        yearLabel.font = UIFont.systemFont(ofSize: 12)
+        yearLabel.textColor = UIColor.gray
+        yearLabel.text = String(format: "%02d/%d", Date().month, Date().year)
+        yearLabel.sizeToFit()
+        view.addSubview(yearLabel)
+        
+        let weatherLabel = UILabel(frame: CGRect(origin: CGPoint(x: dayLabel.x + 3, y: dayLabel.maxY + 3), size: CGSize.zero))
+        weatherLabel.font = UIFont.systemFont(ofSize: 13)
+        weatherLabel.textColor = UIColor.gray
+        weatherLabel.text = "北京：多云 -5℃"
+        weatherLabel.sizeToFit()
+        view.addSubview(weatherLabel)
+    }
+    
     @objc private func closeButtonAction(_ button: UIButton) {
         hide(animated: true)
     }
     
-    @objc private func itemButtonAction(_ button: UIButton) {
-        dismiss(animated: false) {
+    @objc private func itemButtonAction(_ button: ZKComposeButton) {
+        self.dismiss(animated: false) {
             let index = button.tag - 10
             let item = self.items[index]
             item.action?(item)
@@ -142,25 +177,21 @@ public class ZKComposeController: UIViewController {
     public func show(from viewController: UIViewController, animated: Bool) {
         guard animated else {
             self.closeButton.transform = CGAffineTransform(rotationAngle: .pi / 4 * 3)
-            for button in self.buttons { button.transform = CGAffineTransform.identity }
+            for button in buttons.prefix(6) { button.transform = CGAffineTransform.identity}
             viewController.present(self, animated: true, completion: nil)
             return
         }
         viewController.present(self, animated: false) {
             DispatchQueue.main.async {
                 let options: UIView.AnimationOptions = [.curveLinear, .beginFromCurrentState]
-                UIView.animate(withDuration: 0.3, delay: 0.0, options: options, animations: {
+                UIView.animate(withDuration: 0.3, delay: 0, options: options, animations: {
                     self.closeButton.transform = CGAffineTransform(rotationAngle: .pi / 4 * 3)
                 }, completion: nil)
-                for (index, button) in self.buttons.enumerated() {
-                    if index < 6 {
-                        let delay: TimeInterval = Double(index % 3) * 0.05
-                        UIView.animate(withDuration: 0.4, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.05, options: options, animations: {
-                            button.transform = CGAffineTransform.identity
-                        }, completion: nil)
-                    } else {
+                for (index, button) in self.buttons.prefix(6).enumerated() {
+                    let delay: TimeInterval = Double(index % 3) * 0.05
+                    UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.05, options: options, animations: {
                         button.transform = CGAffineTransform.identity
-                    }
+                    }, completion: nil)
                 }
             }
         }
@@ -172,19 +203,18 @@ public class ZKComposeController: UIViewController {
             return
         }
         let options: UIView.AnimationOptions = [.curveLinear, .beginFromCurrentState]
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: options, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: options, animations: {
             self.closeButton.transform = CGAffineTransform.identity
         }) { _ in
             self.dismiss(animated: true, completion: nil)
         }
-        let preCount = page * 6
-        let sufCount = preCount + 5
-        for (index, button) in self.buttons.enumerated() {
-            if index < preCount || index > sufCount { continue }
+        let preIndex = page * 6
+        let sufIndex = min(preIndex + 5, buttons.count - 1)
+        for (index, button) in buttons[preIndex...sufIndex].enumerated() {
             let ty = view.height - button.y
             let delay: TimeInterval = Double(3 - index % 3) * 0.05
-            UIView.animate(withDuration: 0.4, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.05, options: options, animations: {
-                button.transform = CGAffineTransform(translationX: 0.0, y: ty)
+            UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.05, options: options, animations: {
+                button.transform = CGAffineTransform(translationX: 0, y: ty)
             }, completion: nil)
         }
     }
@@ -212,13 +242,13 @@ extension ZKComposeController: UIScrollViewDelegate {
 fileprivate class ZKComposeButton: UIButton {
     
     override func imageRect(forContentRect contentRect: CGRect) -> CGRect {
-        let size = min(contentRect.width - 20.0, contentRect.height - 45.0)
-        let newRect = CGRect(x: 10.0, y: 10.0, width: size, height: size)
+        let size = min(contentRect.width - 20, contentRect.height - 45)
+        let newRect = CGRect(x: 10, y: 10, width: size, height: size)
         return newRect
     }
     
     override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
-        let newRect = CGRect(x: 0.0, y: contentRect.height - 30.0, width: contentRect.width, height: 30.0)
+        let newRect = CGRect(x: 0, y: contentRect.height - 30, width: contentRect.width, height: 30)
         return newRect
     }
 }

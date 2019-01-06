@@ -13,7 +13,7 @@ class ZKTabBarController: UITabBarController {
     fileprivate lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "tabbar_compose_icon_add"))
         imageView.contentMode = .center
-        imageView.frame = CGRect(x: 0.0, y: 0.0, width: 34.0, height: 34.0)
+        imageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         imageView.center = CGPoint(x: kScreenWidth / 2, y: (kTabBarHeight - kBottomMargin) / 2)
         return imageView
     }()
@@ -45,7 +45,7 @@ class ZKTabBarController: UITabBarController {
         // 中间加号按钮，创建一个空控制器
         let vc = UIViewController()
         let item = UITabBarItem(title: nil, image: originalImage(with: "tabbar_compose_button"), selectedImage: nil)
-        item.imageInsets = UIEdgeInsets(top: 5.0, left: 0.0, bottom: -5.0, right: 0.0)
+        item.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         vc.tabBarItem = item
         let nav = ZKNavigationController(rootViewController: vc)
         // 发现
@@ -78,7 +78,6 @@ extension ZKTabBarController: UITabBarControllerDelegate {
         let index = viewControllers!.firstIndex(of: viewController)!
         if index == 2 { showMenuView() }
         NotificationCenter.default.post(name: kClickTabBarNotificationName, object: self, userInfo: [kTabBarItemIndex:index, kTabBarItemTitle:title])
-
         return (index != 2)
     }
     

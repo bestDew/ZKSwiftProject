@@ -10,11 +10,38 @@ import UIKit
 
 public extension UIColor {
     
-    convenience init?(hexString: String) {
-        self.init(hexString: hexString, alpha: 1.0)
+    /// r、g、b、a 元组（范围：0 ~ 255）
+    public typealias RGBAValue = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+    
+    /// 获取 r，g，b，a 的值
+    public var rgbaValue: RGBAValue {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return (red * 255, green * 255, blue * 255, alpha)
     }
     
-    convenience init?(hexString: String, alpha: CGFloat) {
+    /// 是否是深色
+    public var isDark: Bool {
+        if (rgbaValue.red * 0.299 + rgbaValue.green * 0.587 + rgbaValue.blue * 0.114 >= 192) {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    /// 获取反色
+    public var nvertColor: UIColor {
+        return UIColor(red: 255 - rgbaValue.red, green: 255 - rgbaValue.green, blue: 255 - rgbaValue.blue, alpha: rgbaValue.alpha)
+    }
+    
+    convenience public init?(hexString: String) {
+        self.init(hexString: hexString, alpha: 1)
+    }
+    
+    convenience public init?(hexString: String, alpha: CGFloat) {
         // 删除字符串中的空格
         var cString = hexString.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased();
         // 如果是 0x 或 0X 开头的，则截取字符串，从索引为 2 的位置开始，直到末尾
@@ -26,9 +53,7 @@ public extension UIColor {
             cString = String(cString.suffix(cString.count - 1))
         }
         
-        if cString.count != 6 {
-            return nil
-        }
+        if cString.count != 6 { return nil }
         
         // r
         let rString = String(cString.prefix(2))
@@ -44,15 +69,14 @@ public extension UIColor {
         Scanner(string: gString).scanHexInt32(&g)
         Scanner(string: bString).scanHexInt32(&b)
         
-        self.init(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha)
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: alpha)
     }
     
-    class func random() -> UIColor {
-        let r = CGFloat.random()
-        let g = CGFloat.random()
-        let b = CGFloat.random()
-        
-        return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    class public func random() -> UIColor {
+        let r = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        let g = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        let b = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        return UIColor(red: r, green: g, blue: b, alpha: 1)
     }
 }
 

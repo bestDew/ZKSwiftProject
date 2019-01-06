@@ -20,7 +20,7 @@ public var isNotchScreen: Bool {
         guard let window = UIApplication.shared.delegate?.window, let unwrapedWindow = window else {
             return false
         }
-        if unwrapedWindow.safeAreaInsets.left > 0.0 || unwrapedWindow.safeAreaInsets.bottom > 0.0 {
+        if unwrapedWindow.safeAreaInsets.left > 0 || unwrapedWindow.safeAreaInsets.bottom > 0 {
             print(unwrapedWindow.safeAreaInsets)
             return true
         }
@@ -31,9 +31,9 @@ public var isNotchScreen: Bool {
 public let kScreenHeight: CGFloat    = UIScreen.main.bounds.size.height
 public let kScreenWidth: CGFloat     = UIScreen.main.bounds.size.width
 public let kStatusBarheight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-public let kTabBarHeight: CGFloat    = (isNotchScreen ? 83.0 : 49.0)
-public let kTopMargin: CGFloat       = (isNotchScreen ? 88.0 : 64.0)
-public let kBottomMargin: CGFloat    = (isNotchScreen ? 34.0 : 0.0)
+public let kTabBarHeight: CGFloat    = (isNotchScreen ? 83 : 49)
+public let kTopMargin: CGFloat       = (isNotchScreen ? 88 : 64)
+public let kBottomMargin: CGFloat    = (isNotchScreen ? 34 : 0)
 
 public let kFitWidth: (CGFloat) -> CGFloat = { width in
     return width * kScreenWidth / 375

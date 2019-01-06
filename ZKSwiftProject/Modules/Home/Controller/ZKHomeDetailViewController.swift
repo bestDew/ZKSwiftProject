@@ -12,7 +12,7 @@ class ZKHomeDetailViewController: ZKBaseViewController {
 
     fileprivate var imageGroup = [String]()
     fileprivate lazy var cycleScrollView: ZKCycleScrollView = {
-        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0.0, y: kTopMargin, width: kScreenWidth, height: kFitWidth(80.0)))
+        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0, y: kTopMargin, width: kScreenWidth, height: kFitWidth(80)))
         cycleScrollView.delegate = self
         cycleScrollView.dataSource = self
         cycleScrollView.backgroundColor = .clear
@@ -58,7 +58,6 @@ extension ZKHomeDetailViewController: ZKCycleScrollViewDataSource {
     func cycleScrollView(_ cycleScrollView: ZKCycleScrollView, cellForItemAt indexPath: IndexPath) -> ZKCycleScrollViewCell {
         let cell = cycleScrollView.dequeueReusableCell(for: indexPath) as! ZKDetailBannerCell
         cell.imageUrl = imageGroup[indexPath.item]
-        
         return cell
     }
 }

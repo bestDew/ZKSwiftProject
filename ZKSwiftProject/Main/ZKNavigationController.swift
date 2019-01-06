@@ -65,10 +65,9 @@ extension ZKNavigationController: UIGestureRecognizerDelegate {
         // 解决手势冲突
         let gesture = gestureRecognizer as! UIPanGestureRecognizer
         let translation: CGPoint = gesture.translation(in: gesture.view)
-        if translation.x < 0.0 {
+        if translation.x < 0 {
             return false
         }
-        
         return isEnablePopGesture
     }
 }

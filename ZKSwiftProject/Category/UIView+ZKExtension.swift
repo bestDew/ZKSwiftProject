@@ -8,68 +8,131 @@
 
 import UIKit
 
+// MARK: - Layout
 public extension UIView {
     
-    var x: CGFloat {
+    public var x: CGFloat {
         get {
-            return self.frame.origin.x
+            return frame.origin.x
         }
         set {
-            self.frame.origin.x = newValue
+            frame.origin.x = newValue
         }
     }
     
-    var y: CGFloat {
+    public var y: CGFloat {
         get {
-            return self.frame.origin.y
+            return frame.origin.y
         }
         set {
-            self.frame.origin.y = newValue
+            frame.origin.y = newValue
         }
     }
     
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
-            return self.frame.size.width
+            return frame.size.width
         }
         set {
-            self.frame.size.width = newValue
+            frame.size.width = newValue
         }
     }
     
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
-            return self.frame.size.height
+            return frame.size.height
         }
         set {
-            self.frame.size.height = newValue
+            frame.size.height = newValue
         }
     }
     
-    var size: CGSize {
+    public var size: CGSize {
         get {
-            return self.frame.size
+            return frame.size
         }
         set {
-            self.frame.size = newValue
+            frame.size = newValue
         }
     }
     
-    var centerX: CGFloat {
+    public var centerX: CGFloat {
         get{
-            return self.center.x
+            return center.x
         }
         set{
-            self.center.x = newValue
+            center.x = newValue
         }
     }
     
-    var centerY: CGFloat {
+    public var centerY: CGFloat {
         get {
-            return self.center.y
+            return center.y
         }
         set {
-            self.center.y = newValue
+            center.y = newValue
         }
+    }
+    
+    public var maxX: CGFloat {
+        get {
+            return x + width
+        }
+    }
+    
+    public var maxY: CGFloat {
+        get {
+            return y + height
+        }
+    }
+}
+
+// MARK: - 相关操作
+public extension UIView {
+    
+    /// 获取所属的视图控制器
+    public var viewController: UIViewController? {
+        var nextView: UIView? = self
+        while nextView?.superview != nil {
+            nextView = nextView?.superview
+            if let nextResponder = nextView?.next, let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
+    
+    /// 移除指定类型视图
+    ///
+    /// - Parameter subviewClass: 视图类型，默认为 UIView
+    public func removeSubviews(_ subviewClass: AnyClass = UIView.self) {
+        for subview in self.subviews {
+            if subview.isKind(of: subviewClass) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    public func snapshotImage(_ rect: CGRect = .zero, scale: CGFloat = UIScreen.main.scale) -> UIImage? {
+        // 获取整个区域图片
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, scale)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        drawHierarchy(in: frame, afterScreenUpdates: true)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return nil
+        }
+        // 如果不裁剪图片，直接返回整张图片
+        if rect.equalTo(.zero) || rect.equalTo(bounds) {
+            return image
+        }
+        // 按照给定的矩形区域进行裁剪
+        guard let sourceImageRef = image.cgImage else { return nil }
+        let newRect = rect.applying(CGAffineTransform(scaleX: scale, y: scale))
+        guard let newImageRef = sourceImageRef.cropping(to: newRect) else { return nil }
+        // 将 CGImageRef 转换为 UIImage
+        let newImage = UIImage(cgImage: newImageRef, scale: scale, orientation: .up)
+        return newImage
     }
 }

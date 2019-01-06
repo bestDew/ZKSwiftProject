@@ -60,7 +60,7 @@ open class ZKCycleScrollView: UIView {
             customPageControl?.isHidden = !showsPageControl
         }
     }
-    open var autoScrollDuration: TimeInterval = 3.0 {
+    open var autoScrollDuration: TimeInterval = 3 {
         didSet {
             addTimer()
         }
@@ -134,10 +134,10 @@ open class ZKCycleScrollView: UIView {
     
     private func initialization() {
         flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumLineSpacing = 0.0
+        flowLayout.minimumLineSpacing = 0
         flowLayout.scrollDirection = .horizontal
-        flowLayout.headerReferenceSize = CGSize(width: 0.0, height: 0.0)
-        flowLayout.footerReferenceSize = CGSize(width: 0.0, height: 0.0)
+        flowLayout.headerReferenceSize = CGSize.zero
+        flowLayout.footerReferenceSize = CGSize.zero
         
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: flowLayout)
         collectionView.isPagingEnabled = true
@@ -199,9 +199,9 @@ open class ZKCycleScrollView: UIView {
     private func pageControlFrame() -> CGRect {
         let pageControlWidth = CGFloat(count * 15)
         let pageControlX = (bounds.width - pageControlWidth) / 2
-        let pageControlY = bounds.height - 15.0
+        let pageControlY = bounds.height - 15
         let pageControlorigin = CGPoint(x: pageControlX, y: pageControlY)
-        let pageControlSize = CGSize(width: pageControlWidth, height: 15.0)
+        let pageControlSize = CGSize(width: pageControlWidth, height: 15)
         
         return CGRect(origin: pageControlorigin, size: pageControlSize)
     }
@@ -245,7 +245,7 @@ open class ZKCycleScrollView: UIView {
     }
     
     private func currentIndexPath() -> IndexPath {
-        guard bounds.width != 0.0 && bounds.height != 0.0 else {
+        guard bounds.width != 0 && bounds.height != 0 else {
             return IndexPath(item: 0, section: 0)
         }
         var index: Int = 0

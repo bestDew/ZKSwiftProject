@@ -13,13 +13,12 @@ class ZKHomeViewController: ZKBaseViewController {
     fileprivate let kCellReuseId = "UITableViewCell"
     fileprivate var imageGroup = [String]()
     fileprivate lazy var cycleScrollView: ZKCycleScrollView = {
-        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0.0, y: kTopMargin, width: view.bounds.width, height: kFitWidth(200.0)))
+        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0, y: kTopMargin, width: view.bounds.width, height: kFitWidth(200)))
         cycleScrollView.delegate = self
         cycleScrollView.dataSource = self
         cycleScrollView.backgroundColor = .white
         cycleScrollView.register(cellClass: ZKBannerCell.self)
         cycleScrollView.pageControlTransform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        
         return cycleScrollView
     }()
     fileprivate lazy var pageControl: CHIPageControlJaloro = {
@@ -28,20 +27,18 @@ class ZKHomeViewController: ZKBaseViewController {
         pageControl.currentPageTintColor = UIColor(hexString: "#EF8833")!
         pageControl.numberOfPages = imageGroup.count
         pageControl.isHidden = true
-        
         return pageControl
     }()
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 66.0
-        tableView.estimatedRowHeight = 0.0
-        tableView.estimatedSectionHeaderHeight = 0.0
-        tableView.estimatedSectionFooterHeight = 0.0
+        tableView.rowHeight = 66
+        tableView.estimatedRowHeight = 0
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
         tableView.tableFooterView = UIView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellReuseId)
-        
         return tableView
     }()
     
@@ -80,11 +77,11 @@ class ZKHomeViewController: ZKBaseViewController {
         }
         
         coordinator.animate(alongsideTransition: { _ in
-                self.tableView.deselectRow(at: selectedIndexPath, animated: true)
+                self.tableView.deselectRow(at: selectedIndexPath, animated: animated)
             },
             completion: { context in
                 guard context.isCancelled else { return }
-                self.tableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
+                self.tableView.selectRow(at: selectedIndexPath, animated: animated, scrollPosition: .none)
             }
         )
     }
@@ -99,7 +96,6 @@ extension ZKHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuseId, for: indexPath)
         cell.textLabel?.text = "我是第\(indexPath.row)个"
-        
         return cell
     }
 }
@@ -137,7 +133,6 @@ extension ZKHomeViewController: ZKCycleScrollViewDataSource {
     func cycleScrollView(_ cycleScrollView: ZKCycleScrollView, cellForItemAt indexPath: IndexPath) -> ZKCycleScrollViewCell {
         let cell = cycleScrollView.dequeueReusableCell(for: indexPath) as! ZKBannerCell
         cell.imageView.image = UIImage(named: imageGroup[indexPath.item])
-        
         return cell
     }
     

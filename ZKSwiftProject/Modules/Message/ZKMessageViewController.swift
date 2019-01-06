@@ -12,7 +12,7 @@ class ZKMessageViewController: ZKBaseViewController {
 
     fileprivate var textGroup = [String]()
     fileprivate lazy var cycleScrollView: ZKCycleScrollView = {
-        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0.0, y: 0.0, width: kScreenWidth, height: 30.0))
+        let cycleScrollView = ZKCycleScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 30))
         cycleScrollView.center = view.center
         cycleScrollView.delegate = self
         cycleScrollView.dataSource = self
