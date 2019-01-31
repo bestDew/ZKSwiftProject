@@ -52,7 +52,7 @@ public extension Array {
 // MARK: - Equatable
 public extension Array where Element: Equatable {
     
-    /// 删除s元素
+    /// 删除元素
     ///
     /// - Parameter elements: 要删除的元素（可变参数）
     public mutating func remove(_ elements: Element...) {

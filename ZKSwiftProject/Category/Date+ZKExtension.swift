@@ -100,32 +100,34 @@ public extension Date {
         self = date
     }
     
-    /// 类似微信聊天消息的时间格式化，静态方法
+    /// 类似微博的时间格式化，静态方法
     ///
     /// - Parameters:
     ///   - timestamp: 时间戳
     ///   - showHour: 是否显示时分
     /// - Returns: 格式化后的字符串
-    public static func stringWithFormat(timestamp: TimeInterval, showHour: Bool = true) -> String {
+    public static func stringWithFormat(timestamp: TimeInterval) -> String {
         let date = Date(timestamp: timestamp)
-        return date.stringWithFormat(showHour: showHour)
+        return date.stringWithFormat()
     }
     
-    /// 类似微信聊天消息的时间格式化，实例方法
-    public func stringWithFormat(showHour: Bool = true) -> String {
+    /// 类似微博的时间格式化，实例方法
+    public func stringWithFormat() -> String {
         let dateFormatter = DateFormatter()
-        if isToday { // 今天
-            dateFormatter.dateFormat = "HH:mm"
+        let delta: TimeInterval = Date().timeIntervalSince1970 - timeIntervalSince1970
+        
+        if delta >= -600 && delta < 600 {
+            return "刚刚"
+        } else if delta >= 600 && delta < 3600 {
+            return "\(Int(delta / 60))分钟前"
+        } else if isToday { // 今天
+            return "\(Int(delta / 3600))小时前"
         } else if isYesterday { // 昨天
-            dateFormatter.dateFormat = showHour ? "昨天 HH:mm" : "昨天"
-        } else if numberOfdays(to: Date()) < 7 { // 一周内
-            dateFormatter.dateFormat = showHour ? "\(weekdayName) HH:mm" : "\(weekdayName)"
+            dateFormatter.dateFormat = "昨天 HH:mm"
+        } else if year == Date().year {
+            dateFormatter.dateFormat = "MM-dd"
         } else {
-            if year == Date().year { // 今年
-                dateFormatter.dateFormat = showHour ? "MM月dd日 HH:mm" : "MM月dd日"
-            } else {
-                dateFormatter.dateFormat = showHour ? "yyyy年MM月dd日 HH:mm" : "yyyy年MM月dd日"
-            }
+            dateFormatter.dateFormat = "yyyy-MM-dd"
         }
         return dateFormatter.string(from: self)
     }

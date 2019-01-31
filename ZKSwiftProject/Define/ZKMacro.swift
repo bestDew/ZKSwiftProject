@@ -28,8 +28,9 @@ public var isNotchScreen: Bool {
     return false
 }
 
-public let kScreenHeight: CGFloat    = UIScreen.main.bounds.size.height
-public let kScreenWidth: CGFloat     = UIScreen.main.bounds.size.width
+public let kScreenScale: CGFloat     = UIScreen.main.scale
+public let kScreenHeight: CGFloat    = UIScreen.main.bounds.height
+public let kScreenWidth: CGFloat     = UIScreen.main.bounds.width
 public let kStatusBarheight: CGFloat = UIApplication.shared.statusBarFrame.size.height
 public let kTabBarHeight: CGFloat    = (isNotchScreen ? 83 : 49)
 public let kTopMargin: CGFloat       = (isNotchScreen ? 88 : 64)
@@ -40,6 +41,24 @@ public let kFitWidth: (CGFloat) -> CGFloat = { width in
 }
 public let kFitHeight: (CGFloat) -> CGFloat = { height in
     return height * kScreenHeight / 667
+}
+
+// 链接类型
+public enum ZKLinkeType: Int {
+    case at, topic, web
+}
+
+public let kLinkTypeKey: String = "URLType"
+public let kLinkNameKey: String = "URLName"
+public let kTextColor: UIColor = UIColor(hexString: "#17181A")!
+public let kGrayColor: UIColor = UIColor(hexString: "#9D9D9D")!
+public let kThemeColor: UIColor = UIColor(hexString: "#EF8833")!
+public let kSeparatorColor: UIColor = UIColor(white: 0.3, alpha: 0.1)
+public let kLinkTextColor: UIColor = UIColor(hexString: "#527ead")!
+public let kLinkFillColor: UIColor = UIColor(hexString: "#bfdffe")!
+
+public let kThemeFont: (CGFloat) -> UIFont = { size in
+    return UIFont.systemFont(ofSize: size)//UIFont(name: "Heiti SC", size: size)!
 }
 
 // 是否 Debug 模式

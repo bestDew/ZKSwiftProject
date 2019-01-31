@@ -14,20 +14,23 @@ class ZKNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addFullScreenGesture()
+        
+        let fpsLabel = YYFPSLabel(frame: CGRect(x: kScreenWidth - 100, y: 10, width: 0, height: 0))
+        fpsLabel.sizeToFit()
+        navigationBar.addSubview(fpsLabel)
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.hidesBottomBarWhenPushed = true
-        super.pushViewController(viewController, animated: animated)
-        viewController.hidesBottomBarWhenPushed = false
-        
-        if children.count > 1 {
+        if children.count > 0 {
             let image = UIImage(named: "ic_new_return")?.withRenderingMode(.alwaysOriginal)
             let leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(leftBarButtonItemAction))
             viewController.navigationItem.leftBarButtonItem = leftBarButtonItem
         }
+        super.pushViewController(viewController, animated: animated)
+        viewController.hidesBottomBarWhenPushed = false
     }
     
     // MARK: - Private

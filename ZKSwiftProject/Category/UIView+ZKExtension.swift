@@ -55,36 +55,6 @@ public extension UIView {
             frame.size = newValue
         }
     }
-    
-    public var centerX: CGFloat {
-        get{
-            return center.x
-        }
-        set{
-            center.x = newValue
-        }
-    }
-    
-    public var centerY: CGFloat {
-        get {
-            return center.y
-        }
-        set {
-            center.y = newValue
-        }
-    }
-    
-    public var maxX: CGFloat {
-        get {
-            return x + width
-        }
-    }
-    
-    public var maxY: CGFloat {
-        get {
-            return y + height
-        }
-    }
 }
 
 // MARK: - 相关操作
@@ -134,5 +104,23 @@ public extension UIView {
         // 将 CGImageRef 转换为 UIImage
         let newImage = UIImage(cgImage: newImageRef, scale: scale, orientation: .up)
         return newImage
+    }
+}
+
+// MARK: - Scale with animation
+public extension UIView {
+    
+    public func scale() {
+        let options: UIView.AnimationOptions = [.beginFromCurrentState, .allowUserInteraction]
+        UIView.animate(withDuration: 0.15, delay: 0, options: options, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+        }, completion: nil)
+    }
+    
+    public func restoreScale() {
+        let options: UIView.AnimationOptions = [.beginFromCurrentState, .allowUserInteraction]
+        UIView.animate(withDuration: 0.15, delay: 0, options: options, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: nil)
     }
 }

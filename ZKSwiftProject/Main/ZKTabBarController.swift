@@ -29,16 +29,16 @@ class ZKTabBarController: UITabBarController {
     
     private func addChildViewController() {
         // 微博
-        let homeVC = ZKHomeViewController()
-        let homeItem = UITabBarItem(title: "微博", image: originalImage(with: "tabbar_home"), selectedImage: originalImage(with: "tabbar_home_selected"))
-        homeItem.setTitleTextAttributes([.foregroundColor:UIColor(hexString: "#EF8833")!], for: .selected)
-        homeVC.tabBarItem = homeItem
-        homeVC.navigationItem.title = "微博"
-        let homeNav = ZKNavigationController(rootViewController: homeVC)
+        let communityVC = ZKCommunityViewController()
+        let communityItem = UITabBarItem(title: "社区", image: originalImage(with: "tabbar_home"), selectedImage: originalImage(with: "tabbar_home_selected"))
+        communityItem.setTitleTextAttributes([.foregroundColor:kThemeColor], for: .selected)
+        communityVC.tabBarItem = communityItem
+        communityVC.navigationItem.title = "社区"
+        let communityNav = ZKNavigationController(rootViewController: communityVC)
         // 消息
         let messageVC = ZKMessageViewController()
         let messageItem = UITabBarItem(title: "消息", image: originalImage(with: "tabbar_message_center"), selectedImage: originalImage(with: "tabbar_message_center_selected"))
-        messageItem.setTitleTextAttributes([.foregroundColor:UIColor(hexString: "#EF8833")!], for: .selected)
+        messageItem.setTitleTextAttributes([.foregroundColor:kThemeColor], for: .selected)
         messageVC.tabBarItem = messageItem
         messageVC.navigationItem.title = "消息"
         let messageNav = ZKNavigationController(rootViewController: messageVC)
@@ -51,19 +51,19 @@ class ZKTabBarController: UITabBarController {
         // 发现
         let discoverVC = ZKDiscoverViewController()
         let discoverItem = UITabBarItem(title: "发现", image: originalImage(with: "tabbar_discover"), selectedImage: originalImage(with: "tabbar_discover_selected"))
-        discoverItem.setTitleTextAttributes([.foregroundColor:UIColor(hexString: "#EF8833")!], for: .selected)
+        discoverItem.setTitleTextAttributes([.foregroundColor:kThemeColor], for: .selected)
         discoverVC.tabBarItem = discoverItem
         discoverVC.navigationItem.title = "发现"
         let discoverNav = ZKNavigationController(rootViewController: discoverVC)
         // 我的
         let mineVC = ZKMineViewController()
         let mineItem = UITabBarItem(title: "我的", image: originalImage(with: "tabbar_profile"), selectedImage: originalImage(with: "tabbar_profile_selected"))
-        mineItem.setTitleTextAttributes([.foregroundColor:UIColor(hexString: "#EF8833")!], for: .selected)
+        mineItem.setTitleTextAttributes([.foregroundColor:kThemeColor], for: .selected)
         mineVC.tabBarItem = mineItem
         mineVC.navigationItem.title = "我的"
         let mineNav = ZKNavigationController(rootViewController: mineVC)
         
-        viewControllers = [homeNav, messageNav, nav, discoverNav, mineNav]
+        viewControllers = [communityNav, messageNav, nav, discoverNav, mineNav]
     }
     
     private func originalImage(with name:String) -> UIImage? {
@@ -85,8 +85,9 @@ extension ZKTabBarController: UITabBarControllerDelegate {
         
         let idea = ZKComposeItem(title: "文字", image: UIImage(named: "tabbar_compose_idea")) { [weak self] item in
             print("\(item.title!)")
-            let currentVC = self!.selectedViewController as! ZKNavigationController
-            let targetVC = ZKHomeDetailViewController()
+            guard let strongSelf = self else { return }
+            let currentVC = strongSelf.selectedViewController as! ZKNavigationController
+            let targetVC = ZKCommunityDetailViewController()
             currentVC.pushViewController(targetVC, animated: true)
         }
         let photo = ZKComposeItem(title: "相册", image: UIImage(named: "tabbar_compose_photo")) { item in

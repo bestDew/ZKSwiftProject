@@ -37,6 +37,26 @@ public extension UIColor {
         return UIColor(red: 255 - rgbaValue.red, green: 255 - rgbaValue.green, blue: 255 - rgbaValue.blue, alpha: rgbaValue.alpha)
     }
     
+    /// 亮色高亮
+    public var lightTypeHighlightColor: UIColor {
+        var h: CGFloat = 0
+        var s: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return UIColor(hue: h, saturation: s - 0.4, brightness: b, alpha: a)
+    }
+    
+    /// 暗色高亮
+    public var darkTypeHighlightColor: UIColor {
+        var h: CGFloat = 0
+        var s: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return UIColor(hue: h, saturation: s, brightness: b - 0.2, alpha: a)
+    }
+
     convenience public init?(hexString: String) {
         self.init(hexString: hexString, alpha: 1)
     }
@@ -53,7 +73,7 @@ public extension UIColor {
             cString = String(cString.suffix(cString.count - 1))
         }
         
-        if cString.count != 6 { return nil }
+        guard cString.count == 6 else { return nil }
         
         // r
         let rString = String(cString.prefix(2))

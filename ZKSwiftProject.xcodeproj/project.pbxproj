@@ -8,7 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		3113B3E20EC8D62601995C35 /* Pods_ZKSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F79496F525E37AB2BD3627E /* Pods_ZKSwiftProject.framework */; };
-		FD6AABEC21D8BEE000358591 /* ZKHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABEB21D8BEE000358591 /* ZKHomeDetailViewController.swift */; };
+		FD17ED7B21E6ECA60044FB96 /* ZKableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17ED7A21E6ECA60044FB96 /* ZKableViewCell.swift */; };
+		FD17ED8F21E716940044FB96 /* ZKCommunityTimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17ED8E21E716940044FB96 /* ZKCommunityTimelineCell.swift */; };
+		FD1C28FE21EF226800016122 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1C28FA21EF226800016122 /* YYWeakProxy.m */; };
+		FD1C28FF21EF226800016122 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1C28FC21EF226800016122 /* YYFPSLabel.m */; };
+		FD2B97B721F2D1CE00B5425A /* ZKImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B97B521F2D1CE00B5425A /* ZKImageBrowserController.swift */; };
+		FD2B97B821F2D1CE00B5425A /* ZKImageBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B97B621F2D1CE00B5425A /* ZKImageBrowserCell.swift */; };
+		FD2B97BA21F2FD1E00B5425A /* ZKImageBrowserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B97B921F2FD1E00B5425A /* ZKImageBrowserItem.swift */; };
+		FD35A1A621E9C39800DC2FEB /* ZKCommunityTimelineLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35A1A521E9C39800DC2FEB /* ZKCommunityTimelineLayout.swift */; };
+		FD35A1AA21E9E6BF00DC2FEB /* EmoticonWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD35A1A921E9E6BF00DC2FEB /* EmoticonWeibo.bundle */; };
+		FD35A1AC21E9E75800DC2FEB /* ZKCommunityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35A1AB21E9E75800DC2FEB /* ZKCommunityHelper.swift */; };
+		FD3B1E1121E85AB700C0C2BE /* ZKCommunityProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B1E1021E85AB700C0C2BE /* ZKCommunityProfileView.swift */; };
+		FD3B1E1721E880AC00C0C2BE /* ZKCommunityLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B1E1621E880AC00C0C2BE /* ZKCommunityLinkView.swift */; };
+		FD3B1E1921E8A02300C0C2BE /* ZKCommunityPicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B1E1821E8A02300C0C2BE /* ZKCommunityPicturesView.swift */; };
+		FD3B1E1B21E8B41800C0C2BE /* ZKCommunityTimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B1E1A21E8B41800C0C2BE /* ZKCommunityTimelineModel.swift */; };
+		FD6AABEC21D8BEE000358591 /* ZKCommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABEB21D8BEE000358591 /* ZKCommunityDetailViewController.swift */; };
 		FD6AABF121D8FFA700358591 /* ZKCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABF021D8FFA700358591 /* ZKCycleScrollView.swift */; };
 		FD6AABF521DA76B100358591 /* ZKBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABF421DA76B100358591 /* ZKBannerCell.swift */; };
 		FD6AAC0121DAB4A300358591 /* CHIBasePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABF721DAB4A300358591 /* CHIBasePageControl.swift */; };
@@ -22,7 +36,6 @@
 		FD6AAC0921DAB4A300358591 /* CHIPageControlAji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AABFF21DAB4A300358591 /* CHIPageControlAji.swift */; };
 		FD6AAC0A21DAB4A300358591 /* CHILayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AAC0021DAB4A300358591 /* CHILayer.swift */; };
 		FD6AAC0E21DB72CF00358591 /* ZKDetailBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AAC0D21DB72CF00358591 /* ZKDetailBannerCell.swift */; };
-		FD6AAC1021DB79DC00358591 /* ZKCycleScrollTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6AAC0F21DB79DC00358591 /* ZKCycleScrollTextCell.swift */; };
 		FDB0C19821E0B13E002E94F5 /* UIImage+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C19721E0B13E002E94F5 /* UIImage+ZKExtension.swift */; };
 		FDB0C19A21E0C589002E94F5 /* Array+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C19921E0C589002E94F5 /* Array+ZKExtension.swift */; };
 		FDB0C19C21E0CBD4002E94F5 /* DispatchQueue+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0C19B21E0CBD4002E94F5 /* DispatchQueue+ZKExtension.swift */; };
@@ -40,13 +53,19 @@
 		FDD1C87721D7BEDD000139F6 /* CGFloat+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C87621D7BEDD000139F6 /* CGFloat+ZKExtension.swift */; };
 		FDD1C87921D7C2B9000139F6 /* UIView+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C87821D7C2B9000139F6 /* UIView+ZKExtension.swift */; };
 		FDD1C87C21D7C4A0000139F6 /* ZKMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C87B21D7C4A0000139F6 /* ZKMacro.swift */; };
-		FDD1C87E21D7CFFA000139F6 /* ZKHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C87D21D7CFFA000139F6 /* ZKHomeViewController.swift */; };
+		FDD1C87E21D7CFFA000139F6 /* ZKCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C87D21D7CFFA000139F6 /* ZKCommunityViewController.swift */; };
 		FDD1C88221D7D023000139F6 /* ZKMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C88121D7D023000139F6 /* ZKMessageViewController.swift */; };
 		FDD1C88421D7D035000139F6 /* ZKDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C88321D7D035000139F6 /* ZKDiscoverViewController.swift */; };
 		FDD1C88621D7D042000139F6 /* ZKMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C88521D7D042000139F6 /* ZKMineViewController.swift */; };
-		FDD1C88821D7D05F000139F6 /* ZKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C88721D7D05F000139F6 /* ZKBaseViewController.swift */; };
+		FDD1C88821D7D05F000139F6 /* ZKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD1C88721D7D05F000139F6 /* ZKViewController.swift */; };
 		FDDA3AE121DF0A2300114084 /* ZKComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA3AE021DF0A2300114084 /* ZKComposeController.swift */; };
 		FDDA3AE321DF878E00114084 /* Date+ZKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDA3AE221DF878E00114084 /* Date+ZKExtension.swift */; };
+		FDE460C321EA58F6005950D4 /* ZKCommunityTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE460C221EA58F6005950D4 /* ZKCommunityTagsView.swift */; };
+		FDE460C521EA71B9005950D4 /* ZKCommunityToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE460C421EA71B9005950D4 /* ZKCommunityToolBar.swift */; };
+		FDE460C721EA87B8005950D4 /* ZKTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE460C621EA87B8005950D4 /* ZKTableView.swift */; };
+		FDE460CC21EB9EEA005950D4 /* ZKCGUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE460CB21EB9EEA005950D4 /* ZKCGUtilities.swift */; };
+		FDF6EE4921E8F4CC009ED709 /* Community.json in Resources */ = {isa = PBXBuildFile; fileRef = FDF6EE4821E8F4CC009ED709 /* Community.json */; };
+		FDFDBD4821F22B28009F619B /* ZKImageBrowserProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBD4721F22B28009F619B /* ZKImageBrowserProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +89,24 @@
 		6C2E262EF737A38356995E46 /* Pods-ZKSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKSwiftProject/Pods-ZKSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		8F79496F525E37AB2BD3627E /* Pods_ZKSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942078F69B422211E7EAB9B9 /* Pods-ZKSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZKSwiftProject/Pods-ZKSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
-		FD6AABEB21D8BEE000358591 /* ZKHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKHomeDetailViewController.swift; sourceTree = "<group>"; };
+		FD17ED7A21E6ECA60044FB96 /* ZKableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKableViewCell.swift; sourceTree = "<group>"; };
+		FD17ED8E21E716940044FB96 /* ZKCommunityTimelineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityTimelineCell.swift; sourceTree = "<group>"; };
+		FD17ED9221E74BEF0044FB96 /* ZKSwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZKSwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD1C28FA21EF226800016122 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		FD1C28FB21EF226800016122 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		FD1C28FC21EF226800016122 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		FD1C28FD21EF226800016122 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		FD2B97B521F2D1CE00B5425A /* ZKImageBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKImageBrowserController.swift; sourceTree = "<group>"; };
+		FD2B97B621F2D1CE00B5425A /* ZKImageBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKImageBrowserCell.swift; sourceTree = "<group>"; };
+		FD2B97B921F2FD1E00B5425A /* ZKImageBrowserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKImageBrowserItem.swift; sourceTree = "<group>"; };
+		FD35A1A521E9C39800DC2FEB /* ZKCommunityTimelineLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityTimelineLayout.swift; sourceTree = "<group>"; };
+		FD35A1A921E9E6BF00DC2FEB /* EmoticonWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonWeibo.bundle; sourceTree = "<group>"; };
+		FD35A1AB21E9E75800DC2FEB /* ZKCommunityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityHelper.swift; sourceTree = "<group>"; };
+		FD3B1E1021E85AB700C0C2BE /* ZKCommunityProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityProfileView.swift; sourceTree = "<group>"; };
+		FD3B1E1621E880AC00C0C2BE /* ZKCommunityLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityLinkView.swift; sourceTree = "<group>"; };
+		FD3B1E1821E8A02300C0C2BE /* ZKCommunityPicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityPicturesView.swift; sourceTree = "<group>"; };
+		FD3B1E1A21E8B41800C0C2BE /* ZKCommunityTimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityTimelineModel.swift; sourceTree = "<group>"; };
+		FD6AABEB21D8BEE000358591 /* ZKCommunityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityDetailViewController.swift; sourceTree = "<group>"; };
 		FD6AABF021D8FFA700358591 /* ZKCycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCycleScrollView.swift; sourceTree = "<group>"; };
 		FD6AABF421DA76B100358591 /* ZKBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKBannerCell.swift; sourceTree = "<group>"; };
 		FD6AABF721DAB4A300358591 /* CHIBasePageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIBasePageControl.swift; sourceTree = "<group>"; };
@@ -84,7 +120,6 @@
 		FD6AABFF21DAB4A300358591 /* CHIPageControlAji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHIPageControlAji.swift; sourceTree = "<group>"; };
 		FD6AAC0021DAB4A300358591 /* CHILayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHILayer.swift; sourceTree = "<group>"; };
 		FD6AAC0D21DB72CF00358591 /* ZKDetailBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKDetailBannerCell.swift; sourceTree = "<group>"; };
-		FD6AAC0F21DB79DC00358591 /* ZKCycleScrollTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCycleScrollTextCell.swift; sourceTree = "<group>"; };
 		FDB0C19721E0B13E002E94F5 /* UIImage+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ZKExtension.swift"; sourceTree = "<group>"; };
 		FDB0C19921E0C589002E94F5 /* Array+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ZKExtension.swift"; sourceTree = "<group>"; };
 		FDB0C19B21E0CBD4002E94F5 /* DispatchQueue+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ZKExtension.swift"; sourceTree = "<group>"; };
@@ -108,13 +143,19 @@
 		FDD1C87621D7BEDD000139F6 /* CGFloat+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+ZKExtension.swift"; sourceTree = "<group>"; };
 		FDD1C87821D7C2B9000139F6 /* UIView+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ZKExtension.swift"; sourceTree = "<group>"; };
 		FDD1C87B21D7C4A0000139F6 /* ZKMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKMacro.swift; sourceTree = "<group>"; };
-		FDD1C87D21D7CFFA000139F6 /* ZKHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKHomeViewController.swift; sourceTree = "<group>"; };
+		FDD1C87D21D7CFFA000139F6 /* ZKCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityViewController.swift; sourceTree = "<group>"; };
 		FDD1C88121D7D023000139F6 /* ZKMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKMessageViewController.swift; sourceTree = "<group>"; };
 		FDD1C88321D7D035000139F6 /* ZKDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKDiscoverViewController.swift; sourceTree = "<group>"; };
 		FDD1C88521D7D042000139F6 /* ZKMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKMineViewController.swift; sourceTree = "<group>"; };
-		FDD1C88721D7D05F000139F6 /* ZKBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKBaseViewController.swift; sourceTree = "<group>"; };
+		FDD1C88721D7D05F000139F6 /* ZKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKViewController.swift; sourceTree = "<group>"; };
 		FDDA3AE021DF0A2300114084 /* ZKComposeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZKComposeController.swift; sourceTree = "<group>"; };
 		FDDA3AE221DF878E00114084 /* Date+ZKExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ZKExtension.swift"; sourceTree = "<group>"; };
+		FDE460C221EA58F6005950D4 /* ZKCommunityTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityTagsView.swift; sourceTree = "<group>"; };
+		FDE460C421EA71B9005950D4 /* ZKCommunityToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCommunityToolBar.swift; sourceTree = "<group>"; };
+		FDE460C621EA87B8005950D4 /* ZKTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKTableView.swift; sourceTree = "<group>"; };
+		FDE460CB21EB9EEA005950D4 /* ZKCGUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKCGUtilities.swift; sourceTree = "<group>"; };
+		FDF6EE4821E8F4CC009ED709 /* Community.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Community.json; sourceTree = "<group>"; };
+		FDFDBD4721F22B28009F619B /* ZKImageBrowserProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZKImageBrowserProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +204,8 @@
 		FD01A8C721DC5D00009062CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FDD1C87D21D7CFFA000139F6 /* ZKHomeViewController.swift */,
-				FD6AABEB21D8BEE000358591 /* ZKHomeDetailViewController.swift */,
+				FDD1C87D21D7CFFA000139F6 /* ZKCommunityViewController.swift */,
+				FD6AABEB21D8BEE000358591 /* ZKCommunityDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,9 +213,13 @@
 		FD01A8C821DC5D09009062CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FD6AABF421DA76B100358591 /* ZKBannerCell.swift */,
-				FD6AAC0F21DB79DC00358591 /* ZKCycleScrollTextCell.swift */,
 				FD6AAC0D21DB72CF00358591 /* ZKDetailBannerCell.swift */,
+				FD17ED8E21E716940044FB96 /* ZKCommunityTimelineCell.swift */,
+				FD3B1E1021E85AB700C0C2BE /* ZKCommunityProfileView.swift */,
+				FD3B1E1621E880AC00C0C2BE /* ZKCommunityLinkView.swift */,
+				FD3B1E1821E8A02300C0C2BE /* ZKCommunityPicturesView.swift */,
+				FDE460C221EA58F6005950D4 /* ZKCommunityTagsView.swift */,
+				FDE460C421EA71B9005950D4 /* ZKCommunityToolBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +230,70 @@
 				FDDA3AE021DF0A2300114084 /* ZKComposeController.swift */,
 			);
 			path = ZKComposeController;
+			sourceTree = "<group>";
+		};
+		FD17ED8C21E716390044FB96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDD1C88321D7D035000139F6 /* ZKDiscoverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FD17ED8D21E716440044FB96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FD6AABF421DA76B100358591 /* ZKBannerCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD17ED9021E73B610044FB96 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C28F921EF226800016122 /* YYFPSLabel */,
+				FD6AABF621DAB4A300358591 /* CHIPageControl */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		FD1C28F921EF226800016122 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C28FB21EF226800016122 /* YYFPSLabel.h */,
+				FD1C28FC21EF226800016122 /* YYFPSLabel.m */,
+				FD1C28FD21EF226800016122 /* YYWeakProxy.h */,
+				FD1C28FA21EF226800016122 /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
+		FD1C290021EF2CE700016122 /* ZKImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				FD2B97B921F2FD1E00B5425A /* ZKImageBrowserItem.swift */,
+				FD2B97B621F2D1CE00B5425A /* ZKImageBrowserCell.swift */,
+				FD2B97B521F2D1CE00B5425A /* ZKImageBrowserController.swift */,
+				FDFDBD4721F22B28009F619B /* ZKImageBrowserProgressView.swift */,
+			);
+			path = ZKImageBrowser;
+			sourceTree = "<group>";
+		};
+		FD3B1E0C21E8432800C0C2BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD3B1E1A21E8B41800C0C2BE /* ZKCommunityTimelineModel.swift */,
+				FD35A1A521E9C39800DC2FEB /* ZKCommunityTimelineLayout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD3B1E0D21E8434900C0C2BE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FD35A1AB21E9E75800DC2FEB /* ZKCommunityHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		FD6AABED21D8C0DF00358591 /* ZKCycleScrollView */ = {
@@ -238,17 +347,18 @@
 			isa = PBXGroup;
 			children = (
 				FDD1C86421D7BB69000139F6 /* Modules */,
+				FD17ED9021E73B610044FB96 /* Vendor */,
 				FDD1C86821D7BBA8000139F6 /* Manager */,
-				FDD1C86721D7BB97000139F6 /* Helper */,
 				FDD1C86621D7BB8E000139F6 /* Category */,
 				FDD1C86521D7BB6E000139F6 /* Define */,
 				FDD1C86321D7BB46000139F6 /* Component */,
-				FDD1C86221D7BB37000139F6 /* Base */,
+				FDE460C821EB0721005950D4 /* Custom */,
 				FDD1C86121D7BB16000139F6 /* Main */,
-				FDD1C83021D7B8BE000139F6 /* AppDelegate.swift */,
+				FDF6EE4721E8F4AB009ED709 /* Resource */,
 				FDD1C83A21D7B8BF000139F6 /* Assets.xcassets */,
 				FDD1C83C21D7B8BF000139F6 /* LaunchScreen.storyboard */,
 				FDD1C83F21D7B8BF000139F6 /* Info.plist */,
+				FD17ED9221E74BEF0044FB96 /* ZKSwiftProject-Bridging-Header.h */,
 				FDD1C83721D7B8BE000139F6 /* ZKSwiftProject.xcdatamodeld */,
 			);
 			path = ZKSwiftProject;
@@ -275,25 +385,18 @@
 		FDD1C86121D7BB16000139F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FDD1C83021D7B8BE000139F6 /* AppDelegate.swift */,
 				FDD1C86E21D7BCEC000139F6 /* ZKNavigationController.swift */,
 				FDD1C87021D7BDB7000139F6 /* ZKTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		FDD1C86221D7BB37000139F6 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				FDD1C88721D7D05F000139F6 /* ZKBaseViewController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		FDD1C86321D7BB46000139F6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				FD1C290021EF2CE700016122 /* ZKImageBrowser */,
 				FD01A8C921DC5D26009062CF /* ZKComposeController */,
-				FD6AABF621DAB4A300358591 /* CHIPageControl */,
 				FD6AABED21D8C0DF00358591 /* ZKCycleScrollView */,
 			);
 			path = Component;
@@ -303,7 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				FDD1C86921D7BBCE000139F6 /* Login */,
-				FDD1C86A21D7BBD5000139F6 /* Home */,
+				FDD1C86A21D7BBD5000139F6 /* Community */,
 				FDD1C86B21D7BBF7000139F6 /* Message */,
 				FDD1C86C21D7BC13000139F6 /* Discover */,
 				FDD1C86D21D7BC1F000139F6 /* Mine */,
@@ -315,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				FDD1C87B21D7C4A0000139F6 /* ZKMacro.swift */,
+				FDE460CB21EB9EEA005950D4 /* ZKCGUtilities.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -335,13 +439,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		FDD1C86721D7BB97000139F6 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		FDD1C86821D7BBA8000139F6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,13 +453,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		FDD1C86A21D7BBD5000139F6 /* Home */ = {
+		FDD1C86A21D7BBD5000139F6 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				FD3B1E0D21E8434900C0C2BE /* Helper */,
+				FD3B1E0C21E8432800C0C2BE /* Model */,
 				FD01A8C821DC5D09009062CF /* View */,
 				FD01A8C721DC5D00009062CF /* Controller */,
 			);
-			path = Home;
+			path = Community;
 			sourceTree = "<group>";
 		};
 		FDD1C86B21D7BBF7000139F6 /* Message */ = {
@@ -376,7 +475,8 @@
 		FDD1C86C21D7BC13000139F6 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				FDD1C88321D7D035000139F6 /* ZKDiscoverViewController.swift */,
+				FD17ED8D21E716440044FB96 /* View */,
+				FD17ED8C21E716390044FB96 /* Controller */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -387,6 +487,25 @@
 				FDD1C88521D7D042000139F6 /* ZKMineViewController.swift */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		FDE460C821EB0721005950D4 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FDE460C621EA87B8005950D4 /* ZKTableView.swift */,
+				FD17ED7A21E6ECA60044FB96 /* ZKableViewCell.swift */,
+				FDD1C88721D7D05F000139F6 /* ZKViewController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		FDF6EE4721E8F4AB009ED709 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FDF6EE4821E8F4CC009ED709 /* Community.json */,
+				FD35A1A921E9E6BF00DC2FEB /* EmoticonWeibo.bundle */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +617,8 @@
 			files = (
 				FDD1C83E21D7B8BF000139F6 /* LaunchScreen.storyboard in Resources */,
 				FDD1C83B21D7B8BF000139F6 /* Assets.xcassets in Resources */,
+				FDF6EE4921E8F4CC009ED709 /* Community.json in Resources */,
+				FD35A1AA21E9E6BF00DC2FEB /* EmoticonWeibo.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +676,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -566,6 +688,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -579,8 +702,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD1C87E21D7CFFA000139F6 /* ZKHomeViewController.swift in Sources */,
+				FD35A1AC21E9E75800DC2FEB /* ZKCommunityHelper.swift in Sources */,
+				FDD1C87E21D7CFFA000139F6 /* ZKCommunityViewController.swift in Sources */,
+				FDE460C321EA58F6005950D4 /* ZKCommunityTagsView.swift in Sources */,
 				FD6AABF121D8FFA700358591 /* ZKCycleScrollView.swift in Sources */,
+				FD3B1E1121E85AB700C0C2BE /* ZKCommunityProfileView.swift in Sources */,
 				FD6AAC0E21DB72CF00358591 /* ZKDetailBannerCell.swift in Sources */,
 				FDD1C87121D7BDB7000139F6 /* ZKTabBarController.swift in Sources */,
 				FDD1C86F21D7BCEC000139F6 /* ZKNavigationController.swift in Sources */,
@@ -589,26 +715,40 @@
 				FDDA3AE121DF0A2300114084 /* ZKComposeController.swift in Sources */,
 				FDD1C88221D7D023000139F6 /* ZKMessageViewController.swift in Sources */,
 				FD6AAC0321DAB4A300358591 /* CHIPageControlAleppo.swift in Sources */,
+				FD2B97B721F2D1CE00B5425A /* ZKImageBrowserController.swift in Sources */,
+				FD1C28FE21EF226800016122 /* YYWeakProxy.m in Sources */,
+				FD3B1E1921E8A02300C0C2BE /* ZKCommunityPicturesView.swift in Sources */,
+				FDFDBD4821F22B28009F619B /* ZKImageBrowserProgressView.swift in Sources */,
 				FDB0C1A021E0CFA4002E94F5 /* String+ZKExtension.swift in Sources */,
 				FDB0C19C21E0CBD4002E94F5 /* DispatchQueue+ZKExtension.swift in Sources */,
+				FDE460C521EA71B9005950D4 /* ZKCommunityToolBar.swift in Sources */,
+				FD1C28FF21EF226800016122 /* YYFPSLabel.m in Sources */,
+				FD17ED7B21E6ECA60044FB96 /* ZKableViewCell.swift in Sources */,
+				FDE460CC21EB9EEA005950D4 /* ZKCGUtilities.swift in Sources */,
+				FD17ED8F21E716940044FB96 /* ZKCommunityTimelineCell.swift in Sources */,
+				FD3B1E1B21E8B41800C0C2BE /* ZKCommunityTimelineModel.swift in Sources */,
+				FD35A1A621E9C39800DC2FEB /* ZKCommunityTimelineLayout.swift in Sources */,
 				FD6AAC0521DAB4A300358591 /* CHIPageControlChimayo.swift in Sources */,
 				FDD1C83921D7B8BE000139F6 /* ZKSwiftProject.xcdatamodeld in Sources */,
 				FDD1C87721D7BEDD000139F6 /* CGFloat+ZKExtension.swift in Sources */,
 				FD6AAC0721DAB4A300358591 /* CHIPageControllable.swift in Sources */,
 				FDB0C19821E0B13E002E94F5 /* UIImage+ZKExtension.swift in Sources */,
-				FD6AABEC21D8BEE000358591 /* ZKHomeDetailViewController.swift in Sources */,
+				FD6AABEC21D8BEE000358591 /* ZKCommunityDetailViewController.swift in Sources */,
+				FD2B97B821F2D1CE00B5425A /* ZKImageBrowserCell.swift in Sources */,
+				FD3B1E1721E880AC00C0C2BE /* ZKCommunityLinkView.swift in Sources */,
 				FDDA3AE321DF878E00114084 /* Date+ZKExtension.swift in Sources */,
 				FD6AABF521DA76B100358591 /* ZKBannerCell.swift in Sources */,
 				FD6AAC0421DAB4A300358591 /* CHIPageControlJaloro.swift in Sources */,
-				FD6AAC1021DB79DC00358591 /* ZKCycleScrollTextCell.swift in Sources */,
+				FDE460C721EA87B8005950D4 /* ZKTableView.swift in Sources */,
 				FD6AAC0221DAB4A300358591 /* CHIPageControlJalapeno.swift in Sources */,
 				FDD1C87321D7BE32000139F6 /* UIColor+ZKExtension.swift in Sources */,
 				FD6AAC0621DAB4A300358591 /* CHIPageControlPuya.swift in Sources */,
 				FD6AAC0821DAB4A300358591 /* CHIPageControlPaprika.swift in Sources */,
+				FD2B97BA21F2FD1E00B5425A /* ZKImageBrowserItem.swift in Sources */,
 				FDD1C87921D7C2B9000139F6 /* UIView+ZKExtension.swift in Sources */,
 				FD6AAC0921DAB4A300358591 /* CHIPageControlAji.swift in Sources */,
 				FDD1C83121D7B8BE000139F6 /* AppDelegate.swift in Sources */,
-				FDD1C88821D7D05F000139F6 /* ZKBaseViewController.swift in Sources */,
+				FDD1C88821D7D05F000139F6 /* ZKViewController.swift in Sources */,
 				FDD1C88421D7D035000139F6 /* ZKDiscoverViewController.swift in Sources */,
 				FDD1C88621D7D042000139F6 /* ZKMineViewController.swift in Sources */,
 				FDD1C87C21D7C4A0000139F6 /* ZKMacro.swift in Sources */,
@@ -782,6 +922,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFU6JA7V3M;
 				INFOPLIST_FILE = ZKSwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -789,6 +930,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bestdew.ZKSwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ZKSwiftProject/ZKSwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -800,6 +942,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFU6JA7V3M;
 				INFOPLIST_FILE = ZKSwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -807,6 +950,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bestdew.ZKSwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ZKSwiftProject/ZKSwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

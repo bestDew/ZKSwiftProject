@@ -10,5 +10,6 @@ target 'ZKSwiftProject' do
   pod 'SwiftyJSON'  # JSON 解析库
   pod 'Kingfisher'  # 网络图片加载库
   pod 'SnapKit'     # 自动布局库
+  pod 'YYText'
 
 end

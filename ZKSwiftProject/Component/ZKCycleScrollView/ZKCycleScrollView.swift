@@ -177,22 +177,23 @@ open class ZKCycleScrollView: UIView {
         pageControl?.removeFromSuperview()
         customPageControl?.removeFromSuperview()
         
-        if dataSource != nil && dataSource!.responds(to: #selector(ZKCycleScrollViewDataSource.customPageControl(for:))) {
-            customPageControl = dataSource!.customPageControl!(for: self)
-            customPageControl?.frame = pageControlFrame()
-            customPageControl?.isHidden = !showsPageControl
-            customPageControl?.transform = pageControlTransform
-            guard customPageControl != nil else { return }
-            addSubview(customPageControl!)
+        if let dataSource = dataSource, dataSource.responds(to: #selector(ZKCycleScrollViewDataSource.customPageControl(for:))) {
+            customPageControl = dataSource.customPageControl!(for: self)
+            guard let customPageControl = customPageControl else { return }
+            customPageControl.frame = pageControlFrame()
+            customPageControl.isHidden = !showsPageControl
+            customPageControl.transform = pageControlTransform
+            addSubview(customPageControl)
         } else {
             pageControl = UIPageControl()
-            pageControl!.frame = pageControlFrame()
-            pageControl!.numberOfPages = count
-            pageControl!.isHidden = !showsPageControl
-            pageControl!.transform = pageControlTransform
-            pageControl!.pageIndicatorTintColor = pageIndicatorTintColor
-            pageControl!.currentPageIndicatorTintColor = currentPageIndicatorTintColor
-            addSubview(pageControl!)
+            guard let pageControl = pageControl else { return }
+            pageControl.frame = pageControlFrame()
+            pageControl.numberOfPages = count
+            pageControl.isHidden = !showsPageControl
+            pageControl.transform = pageControlTransform
+            pageControl.pageIndicatorTintColor = pageIndicatorTintColor
+            pageControl.currentPageIndicatorTintColor = currentPageIndicatorTintColor
+            addSubview(pageControl)
         }
     }
     
@@ -245,7 +246,7 @@ open class ZKCycleScrollView: UIView {
     }
     
     private func currentIndexPath() -> IndexPath {
-        guard bounds.width != 0 && bounds.height != 0 else {
+        if bounds.width == 0 || bounds.height == 0 {
             return IndexPath(item: 0, section: 0)
         }
         var index: Int = 0
@@ -279,7 +280,7 @@ open class ZKCycleScrollView: UIView {
     }
         
     open func adjustWhenViewWillAppear() {
-        guard count > 0 else { return }
+        if count <= 0 { return }
         let indexPath = currentIndexPath()
         guard indexPath.section < numberOfSections || indexPath.item < count else { return }
         var position: UICollectionView.ScrollPosition!
@@ -297,17 +298,17 @@ extension ZKCycleScrollView: UICollectionViewDelegate {
     
     // MARK: - UICollectionView Delegate
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if delegate != nil && delegate!.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollView(_:didSelectItemAt:))) {
-            delegate!.cycleScrollView!(self, didSelectItemAt: indexPath)
+        if let delegate = delegate, delegate.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollView(_:didSelectItemAt:))) {
+            delegate.cycleScrollView!(self, didSelectItemAt: indexPath)
         }
     }
     
     // MARK: - UIScrollView Delegate
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if delegate != nil && delegate!.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollViewDidScroll(_:))) {
-            delegate!.cycleScrollViewDidScroll!(self)
+        if let delegate = delegate, delegate.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollViewDidScroll(_:))) {
+            delegate.cycleScrollViewDidScroll!(self)
         }
-        guard count > 0 else { return }
+        if count <= 0 { return }
         let indexPath = currentIndexPath()
         pageControl?.currentPage = indexPath.item
     }
@@ -325,10 +326,10 @@ extension ZKCycleScrollView: UICollectionViewDelegate {
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if delegate != nil && delegate!.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollView(_:didScrollTo:))) {
-            guard count > 0 else { return }
+        if let delegate = delegate, delegate.responds(to: #selector(ZKCycleScrollViewDelegate.cycleScrollView(_:didScrollTo:))) {
+            if count <= 0 { return }
             let indexPath = currentIndexPath()
-            delegate!.cycleScrollView!(self, didScrollTo: indexPath)
+            delegate.cycleScrollView!(self, didScrollTo: indexPath)
         }
     }
 }

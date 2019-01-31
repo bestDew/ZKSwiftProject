@@ -20,9 +20,7 @@ public extension String {
     /// - Returns: 结果字符串
     @discardableResult
     public mutating func insert(_ text: String, at index: Int) -> String {
-        if index > count - 1 || index < 0 {
-            return self
-        }
+        if index > count - 1 || index < 0 { return self }
         let insertIndex = self.index(startIndex, offsetBy: index)
         insert(contentsOf: text, at: insertIndex)
         return self
@@ -36,9 +34,7 @@ public extension String {
     /// - Returns: 结果字符串
     @discardableResult
     public mutating func insert(_ text: Character, at index: Int) -> String {
-        if index > count - 1 || index < 0 {
-            return self
-        }
+        if index > count - 1 || index < 0 { return self }
         let insertIndex = self.index(startIndex, offsetBy: index)
         insert(text, at: insertIndex)
         return self
@@ -239,7 +235,7 @@ public extension String {
     ///   - font: 字体
     /// - Returns: 计算出的尺寸
     public func size(with size: CGSize, font: UIFont) -> CGSize {
-        guard isEmpty else { return .zero }
+        if isEmpty { return .zero }
         let attributes = [NSAttributedString.Key.font: font]
         return (self as NSString).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).size
     }
@@ -257,10 +253,12 @@ public extension String {
     
     /// 计算字符串的宽度
     ///
-    /// - Parameter font: 字体
+    /// - Parameters:
+    ///   - height: 限定的高度
+    ///   - font: 字体
     /// - Returns: 计算出的宽度
-    func width(with font: UIFont) -> CGFloat {
-        let _size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: 0)
+    public func width(with height: CGFloat, font: UIFont) -> CGFloat {
+        let _size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
         return size(with: _size, font: font).width
     }
 }

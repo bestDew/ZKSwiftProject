@@ -11,13 +11,9 @@ import UIKit
 public extension UIImage {
     
     /// 通过颜色生成图片
-    ///
-    /// - Parameters:
-    ///   - color: 颜色
-    ///   - size: 图片尺寸
-    convenience public init?(color: UIColor, size: CGSize) {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIGraphicsBeginImageContext(size)
+    convenience public init?(color: UIColor) {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
         defer {
             UIGraphicsEndImageContext()
         }
