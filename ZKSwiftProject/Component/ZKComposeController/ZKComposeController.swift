@@ -24,8 +24,8 @@ public struct ZKComposeItem: Equatable {
     public init(title: String?, image: UIImage?, action: ZKComposeItemAction?) {
         self.title = title
         self.image = image
-        self.isEnabled = true
         self.action = action
+        self.isEnabled = true
     }
 }
 

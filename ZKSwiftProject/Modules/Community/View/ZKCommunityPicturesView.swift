@@ -54,7 +54,7 @@ private class ZKCommunityPicturesViewItem: UIImageView {
         
         typeImageView.frame = CGRect(x: width - 22, y: height - 14, width: 22, height: 14)
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         scale()
     }

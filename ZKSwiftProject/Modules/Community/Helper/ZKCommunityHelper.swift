@@ -44,9 +44,7 @@ class ZKStatusHelper {
                         tempDict[cht] = imagePath
                     }
                     let chs = value["chs"].stringValue
-                    if chs.count > 0 {
-                        tempDict[chs] = imagePath
-                    }
+                    if chs.count > 0 { tempDict[chs] = imagePath }
                 }
             }
         }

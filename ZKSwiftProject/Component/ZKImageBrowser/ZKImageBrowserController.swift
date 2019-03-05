@@ -55,7 +55,7 @@ class ZKImageBrowserController: UIViewController {
     func setIndex(_ index: Int, animated: Bool) {
         guard items.count > 0 else { return }
         
-        let idx = min(max(index, 0), items.count)
+        let idx = min(max(index, 0), items.count - 1)
         let offset = CGPoint(x: scrollView.width * CGFloat(idx), y: 0)
         scrollView.setContentOffset(offset, animated: animated)
     }
@@ -111,14 +111,14 @@ class ZKImageBrowserController: UIViewController {
                 self.animatedImageView.layer.cornerRadius = self.currentItem?.thumbnailImageView.layer.cornerRadius ?? 0
             }) { _ in
                 self.currentItem?.thumbnailImageView.alpha = 1
-                super.dismiss(animated: false, completion: completion)
+                self.dismiss(animated: false, completion: completion)
             }
         } else {
             currentItem?.thumbnailImageView.alpha = 1
             if !fromViewControllerStatusBarHidden {
                 statusBar.alpha = 1
             }
-            super.dismiss(animated: false, completion: completion)
+            self.dismiss(animated: false, completion: completion)
         }
     }
     
@@ -340,12 +340,12 @@ class ZKImageBrowserController: UIViewController {
 extension ZKImageBrowserController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        index = min(max(Int((scrollView.contentOffset.x + scrollView.width * 0.5) / scrollView.width), 0), items.count)
+        index = min(max(Int((scrollView.contentOffset.x + scrollView.width * 0.5) / scrollView.width), 0), items.count - 1)
         pageControl.currentPage = index
         
         let multiple = scrollView.contentOffset.x / scrollView.width
         let toIndex = scrollView.contentOffset.x > lastOffsetX ? Int(ceil(multiple)) : Int(floor(multiple))
-        guard toIndex >= 0 && toIndex < items.count else { return }
+        guard toIndex >= 0 && toIndex < items.count - 1 else { return }
         let toItem = items[toIndex]
         toItem.thumbnailImageView.alpha = 1 - abs(scrollView.contentOffset.x - lastOffsetX) / scrollView.width
         currentItem?.thumbnailImageView.alpha = 1 - toItem.thumbnailImageView.alpha
