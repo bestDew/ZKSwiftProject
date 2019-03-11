@@ -26,7 +26,7 @@ public enum ZKScrollDirection: Int {
     @objc func cycleScrollView(_ cycleScrollView: ZKCycleScrollView, cellForItemAt indexPath: IndexPath) -> ZKCycleScrollViewCell
     
     /// You can customize pageControl by this method.
-    /// If you implement this method, pageIndicatorTintColor, currentPageIndicatorTintColor will be invalid.
+    /// If you implement this method, set pageIndicatorTintColor, currentPageIndicatorTintColor will be invalid.
     /// And you can set currentPage of pageControl by -cycleScrollView(_:didScrollItemAt:) or -cycleScrollViewDidScroll(_:).
     @objc optional func customPageControl(for cycleScrollView: ZKCycleScrollView) -> UIView
 }
